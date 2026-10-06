@@ -1,11 +1,8 @@
 public class RegistroResumos {
 
     private String[] temas;
-
     private String[] conteudos;
-
     private int quantidadeResumos;
-
     private int proximaPosicao;
 
     public RegistroResumos(int numeroDeResumos) {
@@ -22,7 +19,6 @@ public class RegistroResumos {
                 conteudos[i] = conteudo;
                 return;
             }
-
         }
         temas[proximaPosicao] = tema;
         conteudos[proximaPosicao] = conteudo;
@@ -31,8 +27,6 @@ public class RegistroResumos {
             quantidadeResumos += 1;
         }
         proximaPosicao = (proximaPosicao + 1) % temas.length;
-
-
     }
 
     public String[] pegaResumos() {
@@ -41,7 +35,6 @@ public class RegistroResumos {
             resumos[i] = temas[i] + ": " + conteudos[i];
         }
         return resumos;
-
     }
 
     public String imprimeResumos() {
@@ -53,13 +46,10 @@ public class RegistroResumos {
             texto = texto +  " | " + temas[i];
         }
             return texto;
-
-
     }
 
     public int contaResumos() {
         return quantidadeResumos;
-
     }
 
     public boolean temResumo(String tema) {
@@ -69,7 +59,5 @@ public class RegistroResumos {
             }
         }
         return false;
-
     }
-
 }
