@@ -34,4 +34,24 @@ public class Disciplina {
     public String toString() {
         return nomeDisciplina + " " + horasEstudo + " " + calculaMedia() + " " + Arrays.toString(notas);
     }
+    public double[] recebeNotas(double []) {
+
+    }
+    public double mediaPonderada(String getNomeDisciplina, double[] notas, double[] pesos) {
+        int quantNotas = notas.length;
+        double soma = 0;
+        if (pesos == null) {
+            for (int i = 0; i < quantNotas; i++) {
+
+                soma += notas[i]
+            }
+            return soma / quantNotas
+        }
+
+        for (int i = 0; i < quantNotas; i++) {
+
+            soma += notas[i] * pesos[i]
+        }
+        return soma/(Arrays.stream(pesos).sum()) ;
+    }
 }

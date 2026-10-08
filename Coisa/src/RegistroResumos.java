@@ -13,7 +13,7 @@ public class RegistroResumos {
 
     }
 
-    public void adicionaResumo(String tema, String conteudo) {
+    public void adiciona(String tema, String conteudo) {
         for (int i = 0; i < quantidadeResumos; i++) {
             if (temas[i].equals(tema)) {
                 conteudos[i] = conteudo;
@@ -48,10 +48,6 @@ public class RegistroResumos {
             return texto;
     }
 
-    public int contaResumos() {
-        return quantidadeResumos;
-    }
-
     public boolean temResumo(String tema) {
         for (int i = 0; i < quantidadeResumos; i++) {
             if (temas[i].equals(tema)) {
@@ -59,5 +55,12 @@ public class RegistroResumos {
             }
         }
         return false;
+
+    }
+    public int conta() {
+        return quantidadeResumos;
+    }
+    public String busca(String chaveDeBusca) {
+
     }
 }
