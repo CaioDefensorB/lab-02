@@ -1,66 +1,68 @@
 public class RegistroResumos {
 
-    private String[] temas;
-    private String[] conteudos;
+    private Resumo[] resumos;
     private int quantidadeResumos;
     private int proximaPosicao;
 
     public RegistroResumos(int numeroDeResumos) {
-        this.temas = new String[numeroDeResumos];
-        this.conteudos = new String[numeroDeResumos];
+        this.resumos = new Resumo[numeroDeResumos];
         this.quantidadeResumos = 0;
         this.proximaPosicao = 0;
-
     }
 
     public void adiciona(String tema, String conteudo) {
         for (int i = 0; i < quantidadeResumos; i++) {
-            if (temas[i].equals(tema)) {
-                conteudos[i] = conteudo;
+            if (resumos[i].getTema().equals(tema)) {
+                resumos[i].setConteudo(conteudo);
                 return;
             }
         }
-        temas[proximaPosicao] = tema;
-        conteudos[proximaPosicao] = conteudo;
+        resumos[proximaPosicao] = new Resumo(tema, conteudo);
 
-        if (quantidadeResumos < temas.length) {
+        if (quantidadeResumos < resumos.length) {
             quantidadeResumos += 1;
         }
         proximaPosicao = (proximaPosicao + 1) % temas.length;
     }
 
     public String[] pegaResumos() {
-        String[] resumos = new String[quantidadeResumos];
+        String[] resumoCompleto = new String[quantidadeResumos];
         for (int i = 0; i < quantidadeResumos; i++) {
-            resumos[i] = temas[i] + ": " + conteudos[i];
+            resumoCompleto[i] = resumos[i].toString();
         }
-        return resumos;
+        return resumoCompleto;
     }
 
     public String imprimeResumos() {
         String texto = "- " + quantidadeResumos + " resumo(s) cadastrado(s)\n";
         if (quantidadeResumos >= 1) {
-            texto += "- " + temas[0];
+            texto += "- " + resumos[0].getTema();
         }
         for (int i = 1; i < quantidadeResumos; i++) {
-            texto = texto +  " | " + temas[i];
+            texto += " | " + resumos[i].getTema();
         }
             return texto;
     }
 
     public boolean temResumo(String tema) {
         for (int i = 0; i < quantidadeResumos; i++) {
-            if (temas[i].equals(tema)) {
+            if (resumos[i].getTema().equals(tema)) {
                 return true;
             }
         }
         return false;
-
     }
+
     public int conta() {
         return quantidadeResumos;
     }
+// pesquisei como usar o in que ja utilizava em pyhton//
     public String busca(String chaveDeBusca) {
+        String resultado = "";
+        for (int i =0; i < quantidadeResumos; i++) {
+            String conteudoIndentificavel = resumos[i].getConteudo()
+            if (conteudoIndentificavel.contains(chaveDeBusca))
+        }
 
     }
 }
