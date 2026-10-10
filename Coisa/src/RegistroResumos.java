@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class RegistroResumos {
 
     private Resumo[] resumos;
@@ -22,7 +24,7 @@ public class RegistroResumos {
         if (quantidadeResumos < resumos.length) {
             quantidadeResumos += 1;
         }
-        proximaPosicao = (proximaPosicao + 1) % temas.length;
+        proximaPosicao = (proximaPosicao + 1) % resumos.length;
     }
 
     public String[] pegaResumos() {
@@ -39,7 +41,7 @@ public class RegistroResumos {
             texto += "- " + resumos[0].getTema();
         }
         for (int i = 1; i < quantidadeResumos; i++) {
-            texto += " | " + resumos[i].getTema();
+            texto = texto + " | " + resumos[i].getTema();
         }
             return texto;
     }
@@ -53,16 +55,21 @@ public class RegistroResumos {
         return false;
     }
 
-    public int conta() {
-        return quantidadeResumos;
-    }
-// pesquisei como usar o in que ja utilizava em pyhton//
-    public String busca(String chaveDeBusca) {
-        String resultado = "";
-        for (int i =0; i < quantidadeResumos; i++) {
-            String conteudoIndentificavel = resumos[i].getConteudo()
-            if (conteudoIndentificavel.contains(chaveDeBusca))
-        }
+    public int conta() { return quantidadeResumos; }
 
+// pesquisei como usar o in que ja utilizava em pyhton//
+    public String[] busca(String chaveDeBusca) {
+        String[] temasEncontrados = new String[quantidadeResumos];
+        int posicao = 0;
+        String chave = chaveDeBusca.toLowerCase();
+        for (int i =0; i < quantidadeResumos; i++) {
+            String conteudoIndentificavel = (resumos[i].getConteudo()).toLowerCase();
+            if (conteudoIndentificavel.contains(chave)) {
+                temasEncontrados[posicao] = resumos[i].getTema();
+                posicao++;
+            }
+        }
+        Arrays.sort(temasEncontrados);
+        return temasEncontrados;
     }
 }

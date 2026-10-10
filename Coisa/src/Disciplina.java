@@ -6,9 +6,7 @@ public class Disciplina {
     private int horasEstudo;
     private double[] notas = {0, 0, 0, 0};
 
-    public Disciplina(String nomeDisciplina) {
-        this.nomeDisciplina = nomeDisciplina;
-    }
+    public Disciplina(String nomeDisciplina) { this.nomeDisciplina = nomeDisciplina; }
 
     public void cadastraHoras(int horas) {
         horasEstudo += horas;
@@ -34,24 +32,18 @@ public class Disciplina {
     public String toString() {
         return nomeDisciplina + " " + horasEstudo + " " + calculaMedia() + " " + Arrays.toString(notas);
     }
-    public double[] recebeNotas(double []) {
 
-    }
-    public double mediaPonderada(String getNomeDisciplina, double[] notas, double[] pesos) {
-        int quantNotas = notas.length;
+    public double mediaPonderada(String getNomeDisciplina, int quantNotas, double[] notas, double[] pesos) {
         double soma = 0;
         if (pesos == null) {
             for (int i = 0; i < quantNotas; i++) {
-
-                soma += notas[i]
+                soma += notas[i];
             }
-            return soma / quantNotas
+            return soma / quantNotas;
         }
-
         for (int i = 0; i < quantNotas; i++) {
-
-            soma += notas[i] * pesos[i]
+            soma += notas[i] * pesos[i];
         }
-        return soma/(Arrays.stream(pesos).sum()) ;
+        return soma/(Arrays.stream(pesos).sum());
     }
 }
