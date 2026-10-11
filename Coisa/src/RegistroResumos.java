@@ -1,3 +1,12 @@
+/**
+ * Representação dos registros dos resumos
+ * Podendo verificar se existe, imrpimir, buscar por uma parte no conteudo, adicionar, pegar e contar.
+ * É armazenado os resumos e a quantidade de resumos.
+ *
+ *
+ * @author Caio Defensor Brasil Da Silva
+ */
+
 import java.util.Arrays;
 
 public class RegistroResumos {

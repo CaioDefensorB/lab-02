@@ -1,3 +1,10 @@
+/**
+ * Representação do registro das disciplinas do aluno e suas informações.
+ * É armazenado o nome da disciplina, horas de estudo e 4 notas.
+ *
+ * @author Caio Defensor Brasil Da Silva
+ */
+
 import java.util.Arrays;
 
 public class Disciplina {
@@ -29,6 +36,10 @@ public class Disciplina {
         }
     }
 
+    /**
+     * Retorna a String que representa a disciplina. No formato: Disciplina Horas de estudo  Media Notas.
+     * @return a representação em String do tempo online.
+     */
     public String toString() {
         return nomeDisciplina + " " + horasEstudo + " " + calculaMedia() + " " + Arrays.toString(notas);
     }
