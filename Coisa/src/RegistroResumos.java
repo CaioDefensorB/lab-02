@@ -101,6 +101,8 @@ public class RegistroResumos {
 
     /**
      * Busca uma parte escrita em algum conteudo.
+     * Após achar todos os conteúdos que tem o que se procura é criado um array
+     * do tamanho da quantidade de temas que tem no seu conteúdo a parte buscada, podendo assim ordenar o array.
      * @param chaveDeBusca “String” que procura.
      * @return Temas ordenados que tem no conteúdo o que se procura.
      */
@@ -115,7 +117,11 @@ public class RegistroResumos {
                 posicao++;
             }
         }
-        Arrays.sort(temasEncontrados);
-        return temasEncontrados;
+        String[] resultado = new String[posicao];
+        for (int i = 0; i < posicao; i++) {
+            resultado[i] = temasEncontrados[i];
+        }
+        Arrays.sort(resultado);
+        return resultado;
     }
 }
