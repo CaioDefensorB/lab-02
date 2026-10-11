@@ -38,7 +38,9 @@ public class Disciplina {
         this.horasEstudo = 0;
         this.notas = new double[numeroDeNotas];
         this.pesos = new int[numeroDeNotas];
-        for (int i =0; i < numeroDeNotas; i++) { pesos[i] = 1};
+        for (int i =0; i < numeroDeNotas; i++) {
+            pesos[i] = 1;
+        }
     }
 
     /**
