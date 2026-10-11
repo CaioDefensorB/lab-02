@@ -8,15 +8,15 @@
 public class Resumo {
 
     /**
-     * tema e conteudo do resumo, no formato de texto.
+     * Tema e conteudo do resumo, no formato de texto.
      */
     private String tema;
     private String conteudo;
 
     /**
-     * Constroi o resumo a partir de um tema e conteudo.
+     * Constrói o resumo a partir de um tema e conteudo.
      * @param tema o tema do resumo.
-     * @param conteudo o conteudo do resumo.
+     * @param conteudo o conteúdo do resumo.
      */
     public Resumo(String tema, String conteudo) {
         this.tema = tema;
@@ -33,22 +33,22 @@ public class Resumo {
 
     /**
      * Retorna o conteudo do resumo.
-     * @return conteudo.
+     * @return conteúdo.
      */
     public String getConteudo() {
         return conteudo;
     }
 
     /**
-     * possibilita a mudanca do conteudo.
+     * Possibilita a mudança do conteudo.
      */
     public void setConteudo(String conteudo) {
         this.conteudo = conteudo;
     }
 
     /**
-     * Retorna a String que representa o resumo. No formato: Tema : Conteudo.
-     * @return a representação em String do resumo.
+     * Retorna a “String” que representa o resumo. No formato: Tema : Conteúdo.
+     * @return a representação em “String” do resumo.
      */
     public String toString() {
         return tema + ": " + conteudo;

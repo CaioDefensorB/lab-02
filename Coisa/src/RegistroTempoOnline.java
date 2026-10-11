@@ -8,14 +8,14 @@
 public class RegistroTempoOnline {
 
     /**
-     * Nome da disciplina em String, Tempo usado em inteiro e tempo esperado em inteiro.
+     * Nome da disciplina em “String”, Tempo usado em inteiro e tempo esperado em inteiro.
      */
     private String nomeDisciplina;
     private int tempoOnlineUsado;
     private int tempoOnlineEsperado;
 
     /**
-     * Constroi o Tempo online do aluno a partir do nome da disciplina.
+     * Constrói o Tempo online do aluno a partir do nome da disciplina.
      * O tempo usado começa em 0 e o esperado em 120.
      * @param nomeDisciplina o nome da disciplina.
      */
@@ -37,7 +37,7 @@ public class RegistroTempoOnline {
     }
 
     /**
-     * Adiciona o tempo que foi usado.
+     * Adiciona o tempo usado.
      * @param tempo = tempo que o aluno usou a mais.
      */
     public void adicionaTempoOnline(int tempo) {
@@ -45,7 +45,7 @@ public class RegistroTempoOnline {
     }
 
     /**
-     * Verifica de o aluno atingiu o tempo esperado ou não.
+     * Verifica se o aluno atingiu o tempo esperado ou não.
      * @return retorna um tipo booleano, verdadeiro para se o aluno atingiu o tempo esperado e falso para o contrário.
      */
     public boolean atingiuMetaTempoOnline() {
@@ -57,8 +57,8 @@ public class RegistroTempoOnline {
     }
 
     /**
-     * Retorna a String que representa o tempo online. No formato: Disciplina Tempo usado / Tempo esperado.
-     * @return a representação em String do tempo online.
+     * Retorna a “String” que representa o tempo online. No formato: Disciplina Tempo usado / Tempo esperado.
+     * @return a representação em “String” do tempo online.
      */
     public String toString() {
         return nomeDisciplina + " " + tempoOnlineUsado + "/" + tempoOnlineEsperado;

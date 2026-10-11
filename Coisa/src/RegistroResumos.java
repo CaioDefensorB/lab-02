@@ -1,8 +1,7 @@
 /**
  * Representação dos registros dos resumos
- * Podendo verificar se existe, imrpimir, buscar por uma parte no conteudo, adicionar, pegar e contar.
+ * Podendo verificar se existe, imprimir, buscar por uma parte no conteudo, adicionar, pegar e contar.
  * É armazenado os resumos e a quantidade de resumos.
- *
  *
  * @author Caio Defensor Brasil Da Silva
  */
@@ -19,9 +18,9 @@ public class RegistroResumos {
     private int proximaPosicao;
 
     /**
-     * Constroi o Registro de Resumos a partir do número de resumos.
+     * Constrói o Registro de Resumos a partir do número de resumos.
      * Quantidade de resumos e proxima posição começam em 0.
-     * @param numeroDeResumos
+     * @param numeroDeResumos quantidade de resumos
      */
     public RegistroResumos(int numeroDeResumos) {
         this.resumos = new Resumo[numeroDeResumos];
@@ -34,9 +33,8 @@ public class RegistroResumos {
      * Se já existir o mesmo tema do resumo a ser adicionado é adicionado o novo conteudo do mesmo tema no lugar do anterior.
      * Adiciona um resumo na primeira posição livre ou partir da primeira se for maior que o array.
      * Conta a quantidade de resumos.
-     *
      * @param tema tema do resumo.
-     * @param conteudo conteudo do resumo.
+     * @param conteudo conteúdo do resumo.
      */
     public void adiciona(String tema, String conteudo) {
         for (int i = 0; i < quantidadeResumos; i++) {
@@ -55,7 +53,7 @@ public class RegistroResumos {
 
     /**
      * Transfere todos os resumos adicionados para um novo array
-     * @return array de todos os resumos adiconados
+     * @return array de todos os resumos adicionados
      */
     public String[] pegaResumos() {
         String[] resumoCompleto = new String[quantidadeResumos];
@@ -103,7 +101,7 @@ public class RegistroResumos {
 
     /**
      * Busca uma parte escrita em algum conteudo.
-     * @param chaveDeBusca String que procura.
+     * @param chaveDeBusca “String” que procura.
      * @return Temas ordenados que tem no conteúdo o que se procura.
      */
     public String[] busca(String chaveDeBusca) {
