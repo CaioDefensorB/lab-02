@@ -1,6 +1,6 @@
 /**
  * Representação de um resumo, identificado pelo tema.
- * É armazenado tema e conteudo.
+ * É armazenado tema(identificador do resumo) e conteudo.
  *
  * @author Caio Defensor Brasil Da Silva
  */
